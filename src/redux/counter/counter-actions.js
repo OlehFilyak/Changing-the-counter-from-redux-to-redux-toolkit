@@ -1,15 +1,7 @@
-import actionTypes from "./counter-types";
-const initialCounterState = 0;
-export const increment = (value) => ({
-  type: actionTypes.INCREMENT,
-  payload: value,
-});
-export const decrement = (value) => ({
-  type: actionTypes.DECREMENT,
-  payload: value,
-});
+import { createAction } from "@reduxjs/toolkit";
 
-export const reset = () => ({
-  type: actionTypes.RESET,
-  payload: initialCounterState,
-});
+export const increment = createAction("counter/Increment");
+export const decrement = createAction("counter/Decrement");
+export const reset = createAction("counter/Reset");
+
+// console.log(increment(5)); // {type: "timer/increment", payload: 5}

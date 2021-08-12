@@ -1,10 +1,11 @@
-import { createStore, combineReducers } from "redux";
-import { composeWithDevTools } from "redux-devtools-extension";
 import { counterReducer } from "./counter/counter-reducer";
-const rootReducer = combineReducers({
-  counter: counterReducer,
-});
 
-const store = createStore(rootReducer, composeWithDevTools());
+import { configureStore } from "@reduxjs/toolkit";
+
+const store = configureStore({
+  reducer: {
+    counter: counterReducer,
+  },
+});
 
 export default store;
